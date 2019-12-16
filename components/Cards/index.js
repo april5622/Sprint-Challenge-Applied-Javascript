@@ -36,7 +36,7 @@ axios
 })
 
 
-let articlesArray = [];
+/* let articlesArray = [];
 articlesArray.forEach(article => {
     axios.get(`https://lambda-times-backend.herokuapp.com/${article}`)
     .then((res) => {
@@ -47,7 +47,7 @@ articlesArray.forEach(article => {
     .catch((err) => {
         console.log('You hit an error', err)
     });
-});
+}); */
 
 
 
