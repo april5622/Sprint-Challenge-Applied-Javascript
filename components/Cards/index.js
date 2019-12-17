@@ -21,36 +21,23 @@
 
 axios 
 .get('https://lambda-times-backend.herokuapp.com/articles')
-.then((res) => {
+.then((res) => {     
     const articleInfo = (res.data);
-   /*  articleInfo.forEach(elem => {
-        console.log('foreach', elem);
-        cards.appendChild(articleCards(res.data));
-        console.log(articleInfo);
-    }) */
-    cards.appendChild(articleCards(res.data));
+    const objectKeys = Object.keys(res.data.articles)
+    console.log(objectKeys);
+    objectKeys.forEach(key => {
+        const articles = res.data.articles[key]
+        articles.forEach(item => {
+            let art = articleCards(item);
+            cards.appendChild(art);            
+        })
+    })
+    //cards.appendChild(articleCards(res.data));
     console.log(articleInfo);
 })
 .catch((err) => {
     console.log('You hit an error', err);
 })
-
-
-/* let articlesArray = [];
-articlesArray.forEach(article => {
-    axios.get(`https://lambda-times-backend.herokuapp.com/${article}`)
-    .then((res) => {
-        const data = res.data;
-        const newCard = articleCards(res);
-        cards.appendChild(newCard);
-    })
-    .catch((err) => {
-        console.log('You hit an error', err)
-    });
-}); */
-
-
-
 
 const cards = document.querySelector('.cards-container');
 
