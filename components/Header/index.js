@@ -19,7 +19,7 @@ function Header() {
     dateSpan.classList.add('date');
     tempSpan.classList.add('temp');
 
-    dateSpan.textContent = "MARCH 38, 2019";
+    dateSpan.textContent = "MARCH 28, 2019";
     lambdaTimes.textContent = "Lambda Times";
     tempSpan.textContent = "98°";
 

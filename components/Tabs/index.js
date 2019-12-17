@@ -13,8 +13,8 @@ axios
     .get("https://lambda-times-backend.herokuapp.com/topics")
     .then((res) => {
         const tabsInfo = (res.data);
-        topicsElement.appendChild(Topic(res));
-        //console.log(tabsInfo);
+        topicsElement.appendChild(Topic(res.data));
+        console.log(tabsInfo);
     })
     .catch((err) => {
         console.log('You hit an error', err);
@@ -22,12 +22,12 @@ axios
 
 const topicsElement = document.querySelector('.topics');
 
-function Topic(){
+function Topic(obj){
     const tabDiv = document.createElement('div');
 
     tabDiv.classList.add('tab');
     
-    tabDiv.textContent = "topic here";
+    tabDiv.textContent = obj.topics;
 
     return tabDiv;
 };
