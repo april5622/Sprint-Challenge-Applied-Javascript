@@ -56,7 +56,7 @@ function articleCards(obj){
 
     
     headlineDiv.textContent = obj.headline;
-    authorImg.textContent = obj.authorPhoto;
+    authorImg.src = obj.authorPhoto;
     authorSpan.textContent = `By ` + obj.authorName;
 
     cardDiv.appendChild(headlineDiv);

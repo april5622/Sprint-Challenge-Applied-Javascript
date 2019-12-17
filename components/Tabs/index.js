@@ -22,12 +22,12 @@ axios
 
 const topicsElement = document.querySelector('.topics');
 
-function Topic(obj){
+function Topic(){
     const tabDiv = document.createElement('div');
 
     tabDiv.classList.add('tab');
     
-    tabDiv.textContent = obj.topics; //"topic here";
+    tabDiv.textContent = "topic here";
 
     return tabDiv;
 };
